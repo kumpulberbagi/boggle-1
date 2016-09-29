@@ -1,3 +1,5 @@
+require('console.table');
+
 // Get the capital letter starting from 0 - 25
 function alphabetGenerator(index) {
   var alphaBank = []; // storing character from A - Z capital
@@ -34,19 +36,29 @@ function set_boogle(dimension) {
   return result;
 }
 
+function generateIndex(dim) {
+  var index = []
+  for (var i = 1; i <= dim; i++) {
+    i = i.toString();
+    index.push(i);
+  }
+  return index;
+}
 
 // Printing current boogle and returning the value
 //--> for another function
 function print_boogle(dim) {
-  var boogle_now = set_boogle(dim)
-  console.log(boogle_now)
-  return boogle_now;
+  var boogle_now = set_boogle(dim);
+  var title = 'Boggle Dimesion ' + dim + 'x' + dim;
+  console.table(title + "\n");
+  return console.table(generateIndex(dim), boogle_now);
 }
 // Testing
 print_boogle(2);
 print_boogle(3);
 print_boogle(4);
 print_boogle(10);
+print_boogle(20);
 
 // 1000?
 
