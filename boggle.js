@@ -19,7 +19,7 @@ class BoogleBoard{
   }
 
   shakeBoard(){
-    var temp = this.shake(16);
+    var temp = this.shake(this._size);
     //console.log(temp);
     for(var i = 0 ; i < this._row ; i++){
         this._board[i] = [];
